@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/atomtickets/main/json-schema/atomtickets-get-partner-v1-venue-details-detailid-response-schema.json",
+  "title": "GetPartnerV1VenueDetailsDetailidResponse",
+  "x-generated": "2026-09-26",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/GetPartnerV1VenueDetailsDetailidResponse",
+  "type": "object",
+  "properties": {
+    "venue": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "line": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "postal": {
+              "type": "string"
+            },
+            "lat": {
+              "type": "number"
+            },
+            "lon": {
+              "type": "number"
+            }
+          }
+        },
+        "properties": {
+          "type": "object",
+          "properties": {
+            "supportsConcessions": {
+              "type": "boolean"
+            },
+            "supported": {
+              "type": "boolean"
+            }
+          }
+        },
+        "venueUrl": {
+          "type": "string"
+        },
+        "atomVenueId": {
+          "type": "string"
+        }
+      }
+    },
+    "kmDistance": {
+      "type": "number"
+    }
+  }
+}

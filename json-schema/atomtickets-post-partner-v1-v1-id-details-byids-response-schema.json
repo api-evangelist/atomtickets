@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/atomtickets/main/json-schema/atomtickets-post-partner-v1-v1-id-details-byids-response-schema.json",
+  "title": "PostPartnerV1V1IdDetailsByidsResponse",
+  "x-generated": "2026-09-26",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/PostPartnerV1V1IdDetailsByidsResponse",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "productionMedia": {
+      "type": "object",
+      "properties": {
+        "imageData": {
+          "type": "object",
+          "properties": {
+            "coverImageUrl": {
+              "type": "string"
+            },
+            "promoImageUrls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "trailerData": {
+          "type": "object",
+          "properties": {
+            "trailerUrls": {
+              "type": "array",
+              "items": {}
+            }
+          }
+        }
+      }
+    },
+    "contributors": {
+      "type": "object",
+      "properties": {
+        "cast": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "characterName": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "crew": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "synopsis": {
+      "type": "string"
+    },
+    "advisoryRating": {
+      "type": "string"
+    },
+    "genres": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "runtimeMinutes": {
+      "type": "integer"
+    },
+    "releaseDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "atomUserScore": {
+      "type": "number"
+    },
+    "productionUrl": {
+      "type": "string"
+    },
+    "imdbId": {
+      "type": "string"
+    },
+    "atomProductionId": {
+      "type": "string"
+    }
+  }
+}

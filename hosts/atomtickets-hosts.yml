@@ -1,0 +1,101 @@
+generated: '2026-09-26'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 6
+  own: 5
+  other_domain: 0
+  platform: 1
+  roles:
+  - api
+  - docs
+  - other
+  - portal
+  - source
+  - website
+hosts:
+- host: api-beta.atomtickets.com
+  found_by:
+  - apis[]
+  - vendor-detect
+  types: []
+  serves:
+  - api
+  - api-gateway
+  - cdn
+  vendor: aws-api-gateway
+  registrable_domain: atomtickets.com
+  role: other
+  relation: own
+- host: api.atomtickets.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: atomtickets.com
+  role: api
+  relation: own
+- host: apidocs.atomtickets.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: atomtickets.com
+  role: docs
+  relation: own
+- host: developers.atomtickets.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - DeveloperPortal
+  - GettingStarted
+  serves:
+  - api
+  - docs
+  registrable_domain: atomtickets.com
+  role: portal
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: www.atomtickets.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - TermsOfService
+  - Support
+  - PrivacyPolicy
+  - Newsroom
+  - Login
+  - Website
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: atomtickets.com
+  role: website
+  relation: own

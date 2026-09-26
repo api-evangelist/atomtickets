@@ -1,0 +1,159 @@
+{
+  "@context": {
+    "@vocab": "https://atomtickets.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "atomtickets": "https://atomtickets.com/schema#",
+    "GetPartnerV1ProductionIdsByvenueVenueidResponse": "atomtickets:GetPartnerV1ProductionIdsByvenueVenueidResponse",
+    "ids": {
+      "@id": "atomtickets:ids",
+      "@container": "@list"
+    },
+    "GetPartnerV1ProductionIdsByvenueC00110921804Response": "atomtickets:GetPartnerV1ProductionIdsByvenueC00110921804Response",
+    "GetPartnerV1ProductionSearchBynameResponse": "atomtickets:GetPartnerV1ProductionSearchBynameResponse",
+    "id": {
+      "@id": "atomtickets:id",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "atomtickets:name",
+      "@type": "xsd:string"
+    },
+    "productionMedia": {
+      "@id": "atomtickets:productionMedia"
+    },
+    "contributors": {
+      "@id": "atomtickets:contributors"
+    },
+    "synopsis": {
+      "@id": "atomtickets:synopsis",
+      "@type": "xsd:string"
+    },
+    "advisoryRating": {
+      "@id": "atomtickets:advisoryRating",
+      "@type": "xsd:string"
+    },
+    "genres": {
+      "@id": "atomtickets:genres",
+      "@container": "@list"
+    },
+    "runtimeMinutes": {
+      "@id": "atomtickets:runtimeMinutes",
+      "@type": "xsd:integer"
+    },
+    "releaseDate": {
+      "@id": "atomtickets:releaseDate",
+      "@type": "xsd:date"
+    },
+    "atomUserScore": {
+      "@id": "atomtickets:atomUserScore",
+      "@type": "xsd:decimal"
+    },
+    "productionUrl": {
+      "@id": "atomtickets:productionUrl",
+      "@type": "xsd:string"
+    },
+    "imdbId": {
+      "@id": "atomtickets:imdbId",
+      "@type": "xsd:string"
+    },
+    "GetPartnerV1ProductionsByvendorproductionidByvendorproductio": "atomtickets:GetPartnerV1ProductionsByvendorproductionidByvendorproductio",
+    "GetPartnerV1ShowtimeDetailsByvenueVenueidResponse": "atomtickets:GetPartnerV1ShowtimeDetailsByvenueVenueidResponse",
+    "showtimeId": {
+      "@id": "atomtickets:showtimeId",
+      "@type": "xsd:string"
+    },
+    "localShowtime": {
+      "@id": "atomtickets:localShowtime",
+      "@type": "xsd:string"
+    },
+    "productionTitle": {
+      "@id": "atomtickets:productionTitle",
+      "@type": "xsd:string"
+    },
+    "checkoutUrl": {
+      "@id": "atomtickets:checkoutUrl",
+      "@type": "xsd:string"
+    },
+    "attributeMap": {
+      "@id": "atomtickets:attributeMap",
+      "@type": "xsd:string"
+    },
+    "preOrderDetails": {
+      "@id": "atomtickets:preOrderDetails",
+      "@type": "xsd:string"
+    },
+    "PostPartnerV1ShowtimeDetailsDetailidRequest": "atomtickets:PostPartnerV1ShowtimeDetailsDetailidRequest",
+    "venueIds": {
+      "@id": "atomtickets:venueIds",
+      "@container": "@list"
+    },
+    "isoDateBounds": {
+      "@id": "atomtickets:isoDateBounds"
+    },
+    "includeProductionDetails": {
+      "@id": "atomtickets:includeProductionDetails",
+      "@type": "xsd:boolean"
+    },
+    "PostPartnerV1ShowtimeDetailsDetailidResponse": "atomtickets:PostPartnerV1ShowtimeDetailsDetailidResponse",
+    "showtimeDetails": {
+      "@id": "atomtickets:showtimeDetails",
+      "@container": "@list"
+    },
+    "GetPartnerV1VenueDetailsDetailidResponse": "atomtickets:GetPartnerV1VenueDetailsDetailidResponse",
+    "venue": {
+      "@id": "atomtickets:venue"
+    },
+    "kmDistance": {
+      "@id": "atomtickets:kmDistance",
+      "@type": "xsd:decimal"
+    },
+    "PostPartnerV1VenueDetailsDetailidRequest": "atomtickets:PostPartnerV1VenueDetailsDetailidRequest",
+    "vendorId": {
+      "@id": "atomtickets:vendorId",
+      "@type": "xsd:string"
+    },
+    "PostPartnerV1VenueDetailsDetailidResponse": "atomtickets:PostPartnerV1VenueDetailsDetailidResponse",
+    "venueId": {
+      "@id": "atomtickets:venueId",
+      "@type": "xsd:string"
+    },
+    "address": {
+      "@id": "atomtickets:address",
+      "@type": "xsd:string"
+    },
+    "latitude": {
+      "@id": "atomtickets:latitude",
+      "@type": "xsd:string"
+    },
+    "longitude": {
+      "@id": "atomtickets:longitude",
+      "@type": "xsd:string"
+    },
+    "isActive": {
+      "@id": "atomtickets:isActive",
+      "@type": "xsd:string"
+    },
+    "venueUrl": {
+      "@id": "atomtickets:venueUrl",
+      "@type": "xsd:string"
+    },
+    "GetPartnerV1VenuesC00682352378ShowtimesByvendorshowtimeidByv": "atomtickets:GetPartnerV1VenuesC00682352378ShowtimesByvendorshowtimeidByv",
+    "GetPartnerV1VenuesByvendorvenueidByvendorvenueididResponse": "atomtickets:GetPartnerV1VenuesByvendorvenueidByvendorvenueididResponse",
+    "GetPartnerV1VenuesByvendorvenueidByvendorvenueididShowtimesB": "atomtickets:GetPartnerV1VenuesByvendorvenueidByvendorvenueididShowtimesB",
+    "PostPartnerV1V1IdDetailsByidsRequest": "atomtickets:PostPartnerV1V1IdDetailsByidsRequest",
+    "PostPartnerV1V1IdDetailsByidsResponse": "atomtickets:PostPartnerV1V1IdDetailsByidsResponse",
+    "atomProductionId": {
+      "@id": "atomtickets:atomProductionId",
+      "@type": "xsd:string"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Atomtickets API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Atomtickets's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-09-26) from openapi/_ae-authored/atomtickets-openapi-generated.yml.",
+  "dcterms:created": "2026-09-26",
+  "dcterms:source": [
+    "openapi/_ae-authored/atomtickets-openapi-generated.yml"
+  ]
+}

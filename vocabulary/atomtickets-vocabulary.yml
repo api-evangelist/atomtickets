@@ -1,0 +1,88 @@
+generated: '2026-09-26'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/atomtickets-openapi-generated.yml
+vocabulary:
+  name: Atomtickets Domain Vocabulary
+  description: 'Terms declared by Atomtickets''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-09-26'
+  terms:
+  - term: GetPartnerV1ProductionIdsByvenueVenueidResponse
+    definition: 'Object declared by the contract with fields: ids.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/GetPartnerV1ProductionIdsByvenueVenueidResponse
+  - term: GetPartnerV1ProductionIdsByvenueC00110921804Response
+    definition: 'Object declared by the contract with fields: ids.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/GetPartnerV1ProductionIdsByvenueC00110921804Response
+  - term: GetPartnerV1ProductionSearchBynameResponse
+    definition: 'Object declared by the contract with fields: id, name, productionMedia, contributors, synopsis, advisoryRating, genres, runtimeMinutes,
+      releaseDate, atomUserScore, productionUrl, imdbId.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/GetPartnerV1ProductionSearchBynameResponse
+  - term: GetPartnerV1ProductionsByvendorproductionidByvendorproductio
+    definition: 'Object declared by the contract with fields: id, name, productionMedia, contributors, synopsis, advisoryRating, genres, runtimeMinutes,
+      releaseDate, productionUrl, imdbId.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/GetPartnerV1ProductionsByvendorproductionidByvendorproductio
+  - term: GetPartnerV1ShowtimeDetailsByvenueVenueidResponse
+    definition: 'Object declared by the contract with fields: showtimeId, localShowtime, productionTitle, checkoutUrl, attributeMap, preOrderDetails.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/GetPartnerV1ShowtimeDetailsByvenueVenueidResponse
+  - term: PostPartnerV1ShowtimeDetailsDetailidRequest
+    definition: 'Object declared by the contract with fields: venueIds, isoDateBounds, includeProductionDetails.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/PostPartnerV1ShowtimeDetailsDetailidRequest
+  - term: PostPartnerV1ShowtimeDetailsDetailidResponse
+    definition: 'Object declared by the contract with fields: showtimeDetails, preOrderDetails.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/PostPartnerV1ShowtimeDetailsDetailidResponse
+  - term: GetPartnerV1VenueDetailsDetailidResponse
+    definition: 'Object declared by the contract with fields: venue, kmDistance.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/GetPartnerV1VenueDetailsDetailidResponse
+  - term: PostPartnerV1VenueDetailsDetailidRequest
+    definition: 'Object declared by the contract with fields: vendorId.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/PostPartnerV1VenueDetailsDetailidRequest
+  - term: PostPartnerV1VenueDetailsDetailidResponse
+    definition: 'Object declared by the contract with fields: venueId, name, address, latitude, longitude, isActive, venueUrl.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/PostPartnerV1VenueDetailsDetailidResponse
+  - term: GetPartnerV1VenuesC00682352378ShowtimesByvendorshowtimeidByv
+    definition: 'Object declared by the contract with fields: showtimeDetails, preOrderDetails, attributeMap.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/GetPartnerV1VenuesC00682352378ShowtimesByvendorshowtimeidByv
+  - term: GetPartnerV1VenuesByvendorvenueidByvendorvenueididResponse
+    definition: 'Object declared by the contract with fields: venue.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/GetPartnerV1VenuesByvendorvenueidByvendorvenueididResponse
+  - term: GetPartnerV1VenuesByvendorvenueidByvendorvenueididShowtimesB
+    definition: 'Object declared by the contract with fields: showtimeDetails, preOrderDetails, attributeMap.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/GetPartnerV1VenuesByvendorvenueidByvendorvenueididShowtimesB
+  - term: PostPartnerV1V1IdDetailsByidsRequest
+    definition: 'Object declared by the contract with fields: ids.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/PostPartnerV1V1IdDetailsByidsRequest
+  - term: PostPartnerV1V1IdDetailsByidsResponse
+    definition: 'Object declared by the contract with fields: id, name, productionMedia, contributors, synopsis, advisoryRating, genres, runtimeMinutes,
+      releaseDate, atomUserScore, productionUrl, imdbId. (1 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/PostPartnerV1V1IdDetailsByidsResponse

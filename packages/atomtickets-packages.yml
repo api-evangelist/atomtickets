@@ -1,0 +1,25 @@
+generated: '2026-09-26'
+method: probed
+generator: harvest-packages.py
+source: registry metadata endpoints (registry.npmjs.org, pypi.org, rubygems.org, api.nuget.org, packagist.org, crates.io) ; github.com/AtomTickets
+ownership_rule: 'official: true only when the registry metadata (homepage, repository, author, URLs) names the provider''s domain (atomtickets.com,
+  security/atomtickets-domain-security.yml) or its accepted GitHub org (AtomTickets).'
+packages:
+- name: partner-api-docs
+  registry: github
+  url: https://github.com/AtomTickets/partner-api-docs
+  language: HTML
+  official: true
+  version: null
+  published: '2023-05-19'
+  source_repo: https://github.com/AtomTickets/partner-api-docs
+  evidence: repository in github.com/AtomTickets, whose profile names the provider's domain
+- name: vendor-api-docs
+  registry: github
+  url: https://github.com/AtomTickets/vendor-api-docs
+  language: HTML
+  official: true
+  version: null
+  published: '2019-07-19'
+  source_repo: https://github.com/AtomTickets/vendor-api-docs
+  evidence: repository in github.com/AtomTickets, whose profile names the provider's domain

@@ -1,23 +1,126 @@
 aid: atomtickets
+
 name: Atomtickets
-description: 'Atomtickets is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://images.atomtickets.com/image/upload/website/share-site.png
+
+description: Atomtickets is a ticketing platform that provides APIs for event organizers to create, manage, and sell tickets online. It offers
+  functionalities such as event creation, seat selection, pricing tiers, discount codes, and real-time sales analytics. The service aims to simplify
+  ticket distribution for concerts, conferences, and other live events, integrating with payment gateways and offering webhook notifications for
+  transaction updates. Atomtickets targets both small venues and large enterprises, emphasizing scalability, security, and a developer-friendly
+  experience.
+
 url: https://raw.githubusercontent.com/api-evangelist/atomtickets/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Ticketing
+- Events
+- API
+- Payments
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/atomtickets-rules.yml
+- type: JSONLD
+  url: json-ld/atomtickets-context.jsonld
+- type: Vocabulary
+  url: vocabulary/atomtickets-vocabulary.yml
+- type: DataModel
+  url: data-model/atomtickets-data-model.yml
+- type: Conformance
+  url: conformance/atomtickets-conformance.yml
+- type: Hosts
+  url: hosts/atomtickets-hosts.yml
+- type: Vendors
+  url: vendors/atomtickets-vendors.yml
+- type: SDKs
+  url: packages/atomtickets-packages.yml
+- type: Packages
+  url: packages/atomtickets-packages.yml
+- type: TermsOfService
+  url: https://www.atomtickets.com/tos
+- type: Support
+  url: https://www.atomtickets.com/help/support
+- type: PrivacyPolicy
+  url: https://www.atomtickets.com/privacy
+- type: Newsroom
+  url: https://www.atomtickets.com/press
+- type: Login
+  url: https://www.atomtickets.com/login
+- type: DeveloperPortal
+  url: https://developers.atomtickets.com/
+- type: GettingStarted
+  url: https://developers.atomtickets.com/getting-started/introduction/
+- type: Documentation
+  url: https://apidocs.atomtickets.com/
+- type: GitHubOrganization
+  url: https://github.com/AtomTickets
+- type: DomainSecurity
+  url: security/atomtickets-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/atomtickets
+  url: https://www.atomtickets.com
+
+apis:
+- name: Atomtickets Partner API
+  description: Partner API for managing venues, productions, showtimes, ordering and loyalty.
+  humanURL: https://developers.atomtickets.com/
+  baseURL: https://developers.atomtickets.com/api
+  aid: atomtickets:atomtickets-partner-api
+- aid: atomtickets:atomtickets-api
+  name: Atomtickets API
+  description: 'Atomtickets API as documented publicly: 14 operations. Contract generated from the documentation by API Evangelist (2026-09-26);
+
+    not the provider''s own document.'
+  humanURL: https://apidocs.atomtickets.com
+  baseURL: https://api-beta.atomtickets.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/atomtickets-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/atomtickets-get-partner-v1-venues-byvendorvenueid-byvendorvenueidid-showtimes-b-schema.json
+  - type: JSONSchema
+    url: json-schema/atomtickets-get-partner-v1-venues-c00682352378-showtimes-byvendorshowtimeid-byv-schema.json
+  - type: JSONSchema
+    url: json-schema/atomtickets-post-partner-v1-v1-id-details-byids-response-schema.json
+  - type: JSONSchema
+    url: json-schema/atomtickets-get-partner-v1-production-search-byname-response-schema.json
+  - type: JSONSchema
+    url: json-schema/atomtickets-get-partner-v1-productions-byvendorproductionid-byvendorproductio-schema.json
+  - type: JSONSchema
+    url: json-schema/atomtickets-get-partner-v1-venue-details-detailid-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Developer portal provides HTML docs but no OpenAPI, AsyncAPI, GraphQL, gRPC, or WSDL contracts were found.
+  evidence:
+  - url: https://developers.atomtickets.com/api/venues/
+    status: 200
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 18
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local

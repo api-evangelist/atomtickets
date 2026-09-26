@@ -1,0 +1,85 @@
+generated: '2026-09-26'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/atomtickets-openapi-generated.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.atomtickets.com, www.atomtickets.com, apidocs.atomtickets.com,
+  developers.atomtickets.com; verdict opaque (https://api.atomtickets.com/mcp answered 403: the edge authenticates before it routes, which proves
+  nothing either way). Candidate tools below are derived from the 14 operation(s) in the provider''s own OpenAPI (14 listed); they describe what
+  a server WOULD expose, not one that exists.'
+tools:
+- name: get_partner_ping
+  operationId: get_partner_ping
+  method: GET
+  path: /partner/ping
+  description: Ping partner API for health check
+- name: get_partner_v1_production_ids_by_venue_venueid
+  operationId: get_partner_v1_production_ids_byVenue_venueid
+  method: GET
+  path: /partner/v1/production/ids/byVenue/{venueid}
+  description: Get the production ids for the venue that are playing during the startDate/endDate inclusive
+- name: get_partner_v1_production_ids_by_venue_c00110921804
+  operationId: get_partner_v1_production_ids_byVenue_C00110921804
+  method: GET
+  path: /partner/v1/production/ids/byVenue/C00110921804
+  description: GET /partner/v1/production/ids/byVenue/C00110921804
+- name: get_partner_v1_production_search_by_name
+  operationId: get_partner_v1_production_search_byName
+  method: GET
+  path: /partner/v1/production/search/byName
+  description: GET /partner/v1/production/search/byName
+- name: get_partner_v1_productions_by_vendor_production_id_byvendorp
+  operationId: get_partner_v1_productions_byVendorProductionId_byvendorproductionidid
+  method: GET
+  path: /partner/v1/productions/byVendorProductionId/{byvendorproductionidid}
+  description: GET /partner/v1/productions/byVendorProductionId/{byvendorproductionidId}
+- name: get_partner_v1_showtime_details_by_venue_venueid
+  operationId: get_partner_v1_showtime_details_byVenue_venueid
+  method: GET
+  path: /partner/v1/showtime/details/byVenue/{venueid}
+  description: Once the user selects a venue, fetch its available showtimes within a date range.
+- name: post_partner_v1_showtime_details_detailid
+  operationId: post_partner_v1_showtime_details_detailid
+  method: POST
+  path: /partner/v1/showtime/details/{detailid}
+  description: POST /partner/v1/showtime/details/forVenues
+- name: get_partner_v1_venue_details_detailid
+  operationId: get_partner_v1_venue_details_detailid
+  method: GET
+  path: /partner/v1/venue/details/{detailid}
+  description: GET /partner/v1/venue/details/byLocation
+- name: post_partner_v1_venue_details_detailid
+  operationId: post_partner_v1_venue_details_detailid
+  method: POST
+  path: /partner/v1/venue/details/{detailid}
+  description: Map your internal IDs to Atom IDs.
+- name: get_partner_v1_venues_c00682352378_showtimes_by_vendor_showt
+  operationId: get_partner_v1_venues_C00682352378_showtimes_byVendorShowtimeId_byvendorshowtime
+  method: GET
+  path: /partner/v1/venues/C00682352378/showtimes/byVendorShowtimeId/{byvendorshowtimeidid}
+  description: GET /partner/v1/venues/C00682352378/showtimes/byVendorShowtimeId/{byvendorshowtimeidId}
+- name: get_partner_v1_venues_by_vendor_venue_id_byvendorvenueidid
+  operationId: get_partner_v1_venues_byVendorVenueId_byvendorvenueidid
+  method: GET
+  path: /partner/v1/venues/byVendorVenueId/{byvendorvenueidid}
+  description: GET /partner/v1/venues/byVendorVenueId/{byvendorvenueidId}
+- name: get_partner_v1_venues_by_vendor_venue_id_byvendorvenueidid_s
+  operationId: get_partner_v1_venues_byVendorVenueId_byvendorvenueidid_showtimes_byVendorShowti
+  method: GET
+  path: /partner/v1/venues/byVendorVenueId/{byvendorvenueidid}/showtimes/byVendorShowtimeId/{byvendorshowtimeidid}
+  description: GET /partner/v1/venues/byVendorVenueId/{byvendorvenueidId}/showtimes/byVendorShowtimeId/{byvendorshowtimeidId}
+- name: post_partner_v1_v1id_details_by_ids
+  operationId: post_partner_v1_v1id_details_byIds
+  method: POST
+  path: /partner/v1/{v1id}/details/byIds
+  description: POST /partner/v1/production/details/byIds
+- name: get_ping
+  operationId: get_ping
+  method: GET
+  path: /ping
+  description: Health endpoint to check service availability.

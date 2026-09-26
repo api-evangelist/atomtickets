@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/atomtickets/main/json-schema/atomtickets-get-partner-v1-venues-byvendorvenueid-byvendorvenueidid-showtimes-b-schema.json",
+  "title": "GetPartnerV1VenuesByvendorvenueidByvendorvenueididShowtimesB",
+  "x-generated": "2026-09-26",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/atomtickets-openapi-generated.yml#/components/schemas/GetPartnerV1VenuesByvendorvenueidByvendorvenueididShowtimesB",
+  "type": "object",
+  "properties": {
+    "showtimeDetails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "showtimeId": {
+            "type": "string"
+          },
+          "productionId": {
+            "type": "string"
+          },
+          "venueId": {
+            "type": "string"
+          },
+          "offerData": {
+            "type": "object",
+            "properties": {
+              "offers": {
+                "type": "array",
+                "items": {}
+              }
+            }
+          },
+          "utcShowtimeStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "localShowtimeStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "checkoutUrl": {
+            "type": "string"
+          },
+          "availableInventory": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "preOrderDetails": {
+      "type": "array",
+      "items": {}
+    },
+    "attributeMap": {
+      "type": "object",
+      "properties": {
+        "RESERVED": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "iconUrl": {
+              "type": "string"
+            },
+            "friendlyName": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        },
+        "STANDARD-FORMAT": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "iconUrl": {
+              "type": "string"
+            },
+            "friendlyName": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
