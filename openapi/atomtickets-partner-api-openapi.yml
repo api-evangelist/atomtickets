@@ -1,0 +1,946 @@
+openapi: 3.2.0
+info:
+  title: Atomtickets Partner API
+  version: '2026-09-26'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-26: 14 operation(s) read from 11 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Atomtickets has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 13
+    documentation: 1
+    pages-with-code: 5
+    pages-read: 11
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-26'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://apidocs.atomtickets.com
+  - https://developers.atomtickets.com/guides/discovery
+  - https://developers.atomtickets.com/getting-started/introduction
+  - https://developers.atomtickets.com/ai-agents
+  - https://developers.atomtickets.com/getting-started/authentication
+  - https://developers.atomtickets.com/models/venues
+  - https://developers.atomtickets.com/models/productions
+  - https://developers.atomtickets.com/models/showtimes
+  - https://developers.atomtickets.com/examples/venues
+  - https://developers.atomtickets.com/examples/productions
+  - https://developers.atomtickets.com/examples/showtimes
+servers:
+- url: https://api-beta.atomtickets.com
+security:
+- apiKey: []
+tags:
+- name: Partner
+paths:
+  /partner/ping:
+    get:
+      operationId: get_partner_ping
+      tags:
+      - Partner
+      summary: Ping partner API for health check
+      description: No Response Body -- Http Status Code 200 if health check is successful
+      x-source: https://apidocs.atomtickets.com
+      parameters:
+      - name: x-api-key
+        in: header
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /partner/v1/production/ids/byVenue/{venueid}:
+    get:
+      operationId: get_partner_v1_production_ids_byVenue_venueid
+      tags:
+      - Partner
+      summary: Get the production ids for the venue that are playing during the…
+      x-source: https://apidocs.atomtickets.com
+      parameters:
+      - name: venueid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: isoStartDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: isoEndDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: localStartDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: localEndDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: marketplaceId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPartnerV1ProductionIdsByvenueVenueidResponse'
+      x-evidence:
+        kind: documentation
+  /partner/v1/production/ids/byVenue/C00110921804:
+    get:
+      operationId: get_partner_v1_production_ids_byVenue_C00110921804
+      tags:
+      - Partner
+      summary: GET /partner/v1/production/ids/byVenue/C00110921804
+      x-source: https://apidocs.atomtickets.com
+      parameters:
+      - name: isoEndDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: isoStartDate
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPartnerV1ProductionIdsByvenueC00110921804Response'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET  'https://api-beta.atomtickets.com/partner/v1/production/ids/byVenue/C00110921804?isoStartDate=2019-10-10T07:00:00Z&isoEndDate=2019-10-11T07:00:00Z'  -H 'x-api-key: {AtomPartnerApiKey}'\n Response \n{\n \"ids\": [\n \"B0093420570\",\n \"B00437681129\",\n \"B00685932020\",\n \"B00309261556\"\n ]\n}\n URL \n http://api-beta.atomtickets.com/partner/v1/production/details/byIds \n Header \n x-api-key "
+  /partner/v1/production/search/byName:
+    get:
+      operationId: get_partner_v1_production_search_byName
+      tags:
+      - Partner
+      summary: GET /partner/v1/production/search/byName
+      x-source: https://apidocs.atomtickets.com
+      parameters:
+      - name: name
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPartnerV1ProductionSearchBynameResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET  'https://api-beta.atomtickets.com/partner/v1/production/search/byName?name=Captain%20Marvel'  -H 'x-api-key: {AtomPartnerApiKey}'\n Response \n{\n \"productionDetails\": [\n {\n \"id\": \"B00362154100\",\n \"name\": \"Captain Marvel\",\n \"productionMedia\": {\n \"imageData\": {\n \"coverImageUrl\": \"https://images.atomtickets.com/image/upload/w_520,h_780,q_auto/v1/ingestion-images-archive/archive/rm123368960"
+  /partner/v1/productions/byVendorProductionId/{byvendorproductionidid}:
+    get:
+      operationId: get_partner_v1_productions_byVendorProductionId_byvendorproductionidid
+      tags:
+      - Partner
+      summary: GET /partner/v1/productions/byVendorProductionId/{byvendorproductionidId}
+      x-source: https://apidocs.atomtickets.com
+      parameters:
+      - name: byvendorproductionidid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPartnerV1ProductionsByvendorproductionidByvendorproductio'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET  'https://api-beta.atomtickets.com/partner/v1/productions/byVendorProductionId/0000001176'  -H 'x-api-key: {AtomPartnerApiKey}'\n Response \n{\n \"productionDetails\": [\n {\n \"id\": \"B00849252296\",\n \"name\": \"The Last Movie\",\n \"productionMedia\": {\n \"imageData\": {\n \"coverImageUrl\": \"https://images.atomtickets.com/image/upload/w_520,h_780,q_auto/v1/ingestion-images-archive/archive/rm1217998848.j"
+  /partner/v1/showtime/details/byVenue/{venueid}:
+    get:
+      operationId: get_partner_v1_showtime_details_byVenue_venueid
+      tags:
+      - Partner
+      summary: Once the user selects a venue, fetch its available showtimes within a date range
+      x-source: https://developers.atomtickets.com/guides/discovery
+      parameters:
+      - name: venueid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: isoStartDate
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Start of date range
+      - name: isoEndDate
+        in: query
+        required: true
+        schema:
+          type: string
+        description: End of date range
+      - name: productionIds
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Filter by movie
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPartnerV1ShowtimeDetailsByvenueVenueidResponse'
+      x-evidence:
+        kind: documentation
+  /partner/v1/showtime/details/{detailid}:
+    post:
+      operationId: post_partner_v1_showtime_details_detailid
+      tags:
+      - Partner
+      summary: POST /partner/v1/showtime/details/forVenues
+      x-source: https://apidocs.atomtickets.com
+      parameters:
+      - name: detailid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPartnerV1ShowtimeDetailsDetailidRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPartnerV1ShowtimeDetailsDetailidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST  https://api-beta.atomtickets.com/partner/v1/showtime/details/forVenues  -H 'x-api-key: b4fUkljP8a3Vve9KZCsbN5OGszb72N1p2D0ZtSGH'  -d '{\n \"venueIds\":[\"C0057070265\",\"C00110921804\",\"C00401723167\",\"C00928817799\"],\n \"isoDateBounds\":{\n \"isoStartDate\":\"2019-02-25T07:00:00Z\",\n \"isoEndDate\":\"2019-02-26T07:00:00Z\"\n },\n \"includeProductionDetails\":true\n}'\n Request Body \n{\n \"venueIds\":[\"C00570702"
+        collapsed_from: 2 example path(s) differing only at detailId
+  /partner/v1/venue/details/{detailid}:
+    get:
+      operationId: get_partner_v1_venue_details_detailid
+      tags:
+      - Partner
+      summary: GET /partner/v1/venue/details/byLocation
+      x-source: https://apidocs.atomtickets.com
+      parameters:
+      - name: detailid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: lat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: lon
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: radius
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPartnerV1VenueDetailsDetailidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET  'https://api-beta.atomtickets.com/partner/v1/venue/details/byLocation?lat=34.0195&lon=-118.4912&radius=50&pageSize=2'  -H 'x-api-key: {AtomPartnerApiKey}'\n Response \n{\n \"venueDetails\": [\n {\n \"venue\": {\n \"id\": \"C00110921804\",\n \"name\": \"AMC Loews Broadway 4\",\n \"address\": {\n \"line\": \"1441 Third Street Promenade\",\n \"city\": \"Santa Monica\",\n \"state\": \"CA\",\n \"postal\": \"90401\",\n \"lat\": 34.014"
+        collapsed_from: 3 example path(s) differing only at detailId
+    post:
+      operationId: post_partner_v1_venue_details_detailid
+      tags:
+      - Partner
+      summary: Map your internal IDs to Atom IDs
+      x-source: https://developers.atomtickets.com/guides/discovery
+      parameters:
+      - name: detailid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPartnerV1VenueDetailsDetailidRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPartnerV1VenueDetailsDetailidResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at detailId
+  /partner/v1/venues/C00682352378/showtimes/byVendorShowtimeId/{byvendorshowtimeidid}:
+    get:
+      operationId: get_partner_v1_venues_C00682352378_showtimes_byVendorShowtimeId_byvendorshowtime
+      tags:
+      - Partner
+      summary: GET /partner/v1/venues/C00682352378/showtimes/byVendorShowtimeId/{byvendorshowti…
+      x-source: https://apidocs.atomtickets.com
+      parameters:
+      - name: byvendorshowtimeidid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPartnerV1VenuesC00682352378ShowtimesByvendorshowtimeidByv'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET  'https://api-beta.atomtickets.com/partner/v1/venues/C00682352378/showtimes/byVendorShowtimeId/19'  -H 'x-api-key: {AtomPartnerApiKey}'\n Response \n{\n \"showtimeDetails\": [\n {\n \"showtimeId\": \"D00999351728\",\n \"productionId\": \"B00849252296\",\n \"venueId\": \"C00682352378\",\n \"offerData\": {\n \"offers\": []\n },\n \"utcShowtimeStart\": \"2019-09-13T20:05:00Z\",\n \"localShowtimeStart\": \"2019-09-13T16:05:00"
+  /partner/v1/venues/byVendorVenueId/{byvendorvenueidid}:
+    get:
+      operationId: get_partner_v1_venues_byVendorVenueId_byvendorvenueidid
+      tags:
+      - Partner
+      summary: GET /partner/v1/venues/byVendorVenueId/{byvendorvenueidId}
+      x-source: https://apidocs.atomtickets.com
+      parameters:
+      - name: byvendorvenueidid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPartnerV1VenuesByvendorvenueidByvendorvenueididResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET  'https://api-beta.atomtickets.com/partner/v1/venues/byVendorVenueId/0001'  -H 'x-api-key: {AtomPartnerApiKey}'\n Response \n{\n \"venueDetails\": [\n {\n \"venue\": {\n \"id\": \"C00889608713\",\n \"name\": \"Flix Brewhouse - Des Moines\",\n \"address\": {\n \"line\": \"3800 Merle Hay Road\",\n \"city\": \"Des Moines\",\n \"state\": \"IA\",\n \"postal\": \"50310\",\n \"lat\": 41.629539489746094,\n \"lon\": -93.69798278808594\n },\n \""
+  /partner/v1/venues/byVendorVenueId/{byvendorvenueidid}/showtimes/byVendorShowtimeId/{byvendorshowtimeidid}:
+    get:
+      operationId: get_partner_v1_venues_byVendorVenueId_byvendorvenueidid_showtimes_byVendorShowti
+      tags:
+      - Partner
+      summary: GET /partner/v1/venues/byVendorVenueId/{byvendorvenueidId}/showtimes/byVendorSho…
+      x-source: https://apidocs.atomtickets.com
+      parameters:
+      - name: byvendorvenueidid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: byvendorshowtimeidid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPartnerV1VenuesByvendorvenueidByvendorvenueididShowtimesB'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET  'https://api-beta.atomtickets.com/partner/v1/venues/byVendorVenueId/511/showtimes/byVendorShowtimeId/19'  -H 'x-api-key: {AtomPartnerApiKey}'\n Response \n{\n \"showtimeDetails\": [\n {\n \"showtimeId\": \"D00999351728\",\n \"productionId\": \"B00849252296\",\n \"venueId\": \"C00682352378\",\n \"offerData\": {\n \"offers\": []\n },\n \"utcShowtimeStart\": \"2019-09-13T20:05:00Z\",\n \"localShowtimeStart\": \"2019-09-13T1"
+  /partner/v1/{v1id}/details/byIds:
+    post:
+      operationId: post_partner_v1_v1id_details_byIds
+      tags:
+      - Partner
+      summary: POST /partner/v1/production/details/byIds
+      x-source: https://apidocs.atomtickets.com
+      parameters:
+      - name: v1id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPartnerV1V1IdDetailsByidsRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPartnerV1V1IdDetailsByidsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST  https://api-beta.atomtickets.com/partner/v1/production/details/byIds  -H 'x-api-key: {AtomPartnerApiKey}'  -d '{\n \"ids\":[\"B00809994585\"]\n}'\n Request Body \n{\n \"ids\":[\"B00809994585\"]\n}\n Response \n{\n \"productionDetails\": [\n {\n \"id\": \"B00809994585\",\n \"name\": \"The Predator\",\n \"productionMedia\": {\n \"imageData\": {\n \"coverImageUrl\": \"https://images.atomtickets.com/image/upload/w_520,h_780,q_"
+        collapsed_from: 3 example path(s) differing only at v1Id
+components:
+  schemas:
+    GetPartnerV1VenuesC00682352378ShowtimesByvendorshowtimeidByv:
+      type: object
+      properties:
+        showtimeDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              showtimeId:
+                type: string
+              productionId:
+                type: string
+              venueId:
+                type: string
+              offerData:
+                type: object
+                properties:
+                  offers:
+                    type: array
+                    items: {}
+              utcShowtimeStart:
+                type: string
+                format: date-time
+              localShowtimeStart:
+                type: string
+                format: date-time
+              attributes:
+                type: array
+                items:
+                  type: string
+              checkoutUrl:
+                type: string
+              availableInventory:
+                type: integer
+        preOrderDetails:
+          type: array
+          items: {}
+        attributeMap:
+          type: object
+          properties:
+            RESERVED:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                iconUrl:
+                  type: string
+                friendlyName:
+                  type: string
+                description:
+                  type: string
+            STANDARD-FORMAT:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                iconUrl:
+                  type: string
+                friendlyName:
+                  type: string
+                description:
+                  type: string
+    GetPartnerV1VenueDetailsDetailidResponse:
+      type: object
+      properties:
+        venue:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            address:
+              type: object
+              properties:
+                line:
+                  type: string
+                city:
+                  type: string
+                state:
+                  type: string
+                postal:
+                  type: string
+                lat:
+                  type: number
+                lon:
+                  type: number
+            properties:
+              type: object
+              properties:
+                supportsConcessions:
+                  type: boolean
+                supported:
+                  type: boolean
+            venueUrl:
+              type: string
+            atomVenueId:
+              type: string
+        kmDistance:
+          type: number
+    PostPartnerV1ShowtimeDetailsDetailidRequest:
+      type: object
+      properties:
+        venueIds:
+          type: array
+          items:
+            type: string
+        isoDateBounds:
+          type: object
+          properties:
+            isoStartDate:
+              type: string
+              format: date-time
+            isoEndDate:
+              type: string
+              format: date-time
+        includeProductionDetails:
+          type: boolean
+    PostPartnerV1VenueDetailsDetailidRequest:
+      type: object
+      properties:
+        vendorId:
+          type: string
+          description: Internal vendor ID to map
+      required:
+      - vendorId
+    GetPartnerV1ProductionSearchBynameResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        productionMedia:
+          type: object
+          properties:
+            imageData:
+              type: object
+              properties:
+                coverImageUrl:
+                  type: string
+                promoImageUrls:
+                  type: array
+                  items: {}
+            trailerData:
+              type: object
+              properties:
+                trailerUrls:
+                  type: array
+                  items:
+                    type: string
+        contributors:
+          type: object
+          properties:
+            cast:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  characterName:
+                    type: string
+            crew:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  role:
+                    type: string
+        synopsis:
+          type: string
+        advisoryRating:
+          type: string
+        genres:
+          type: array
+          items:
+            type: string
+        runtimeMinutes:
+          type: integer
+        releaseDate:
+          type: string
+          format: date
+        atomUserScore:
+          type: number
+        productionUrl:
+          type: string
+        imdbId:
+          type: string
+    GetPartnerV1ProductionIdsByvenueC00110921804Response:
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+    GetPartnerV1ProductionsByvendorproductionidByvendorproductio:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        productionMedia:
+          type: object
+          properties:
+            imageData:
+              type: object
+              properties:
+                coverImageUrl:
+                  type: string
+                promoImageUrls:
+                  type: array
+                  items: {}
+            trailerData:
+              type: object
+              properties:
+                trailerUrls:
+                  type: array
+                  items:
+                    type: string
+        contributors:
+          type: object
+          properties:
+            cast:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  characterName:
+                    type: string
+            crew:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  role:
+                    type: string
+        synopsis:
+          type: string
+        advisoryRating:
+          type: string
+        genres:
+          type: array
+          items:
+            type: string
+        runtimeMinutes:
+          type: integer
+        releaseDate:
+          type: string
+          format: date
+        productionUrl:
+          type: string
+        imdbId:
+          type: string
+    GetPartnerV1ProductionIdsByvenueVenueidResponse:
+      type: object
+      properties:
+        ids:
+          type: array
+    GetPartnerV1VenuesByvendorvenueidByvendorvenueididShowtimesB:
+      type: object
+      properties:
+        showtimeDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              showtimeId:
+                type: string
+              productionId:
+                type: string
+              venueId:
+                type: string
+              offerData:
+                type: object
+                properties:
+                  offers:
+                    type: array
+                    items: {}
+              utcShowtimeStart:
+                type: string
+                format: date-time
+              localShowtimeStart:
+                type: string
+                format: date-time
+              attributes:
+                type: array
+                items:
+                  type: string
+              checkoutUrl:
+                type: string
+              availableInventory:
+                type: integer
+        preOrderDetails:
+          type: array
+          items: {}
+        attributeMap:
+          type: object
+          properties:
+            RESERVED:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                iconUrl:
+                  type: string
+                friendlyName:
+                  type: string
+                description:
+                  type: string
+            STANDARD-FORMAT:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                iconUrl:
+                  type: string
+                friendlyName:
+                  type: string
+                description:
+                  type: string
+    PostPartnerV1V1IdDetailsByidsRequest:
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+    PostPartnerV1ShowtimeDetailsDetailidResponse:
+      type: object
+      properties:
+        showtimeDetails:
+          type: array
+          items: {}
+        preOrderDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              productionId:
+                type: string
+              venueId:
+                type: string
+              showtimeDays:
+                type: array
+                items:
+                  type: string
+                  format: date-time
+    GetPartnerV1VenuesByvendorvenueidByvendorvenueididResponse:
+      type: object
+      properties:
+        venue:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            address:
+              type: object
+              properties:
+                line:
+                  type: string
+                city:
+                  type: string
+                state:
+                  type: string
+                postal:
+                  type: string
+                lat:
+                  type: number
+                lon:
+                  type: number
+            properties:
+              type: object
+              properties:
+                supportsConcessions:
+                  type: boolean
+                supported:
+                  type: boolean
+            venueUrl:
+              type: string
+            atomVenueId:
+              type: string
+    GetPartnerV1ShowtimeDetailsByvenueVenueidResponse:
+      type: object
+      properties:
+        showtimeId:
+          type: string
+          description: unique identifier
+        localShowtime:
+          type: string
+          description: display time in the venue’s timezone
+        productionTitle:
+          type: string
+          description: movie name
+        checkoutUrl:
+          type: string
+          description: the key field for co-branded checkout
+        attributeMap:
+          type: string
+          description: screen format (IMAX, Dolby, etc.), accessibility features
+        preOrderDetails:
+          type: string
+          description: pricing information and ticket availability
+    PostPartnerV1VenueDetailsDetailidResponse:
+      type: object
+      properties:
+        venueId:
+          type: string
+        name:
+          type: string
+        address:
+          type: string
+        latitude:
+          type: string
+        longitude:
+          type: string
+        isActive:
+          type: string
+        venueUrl:
+          type: string
+    PostPartnerV1V1IdDetailsByidsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        productionMedia:
+          type: object
+          properties:
+            imageData:
+              type: object
+              properties:
+                coverImageUrl:
+                  type: string
+                promoImageUrls:
+                  type: array
+                  items:
+                    type: string
+            trailerData:
+              type: object
+              properties:
+                trailerUrls:
+                  type: array
+                  items: {}
+        contributors:
+          type: object
+          properties:
+            cast:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  characterName:
+                    type: string
+            crew:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  role:
+                    type: string
+        synopsis:
+          type: string
+        advisoryRating:
+          type: string
+        genres:
+          type: array
+          items:
+            type: string
+        runtimeMinutes:
+          type: integer
+        releaseDate:
+          type: string
+          format: date
+        atomUserScore:
+          type: number
+        productionUrl:
+          type: string
+        imdbId:
+          type: string
+        atomProductionId:
+          type: string
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: x-api-key

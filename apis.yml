@@ -86,30 +86,56 @@ apis:
   humanURL: https://developers.atomtickets.com/
   baseURL: https://developers.atomtickets.com/api
   aid: atomtickets:atomtickets-partner-api
-- aid: atomtickets:atomtickets-api
-  name: Atomtickets API
-  description: 'Atomtickets API as documented publicly: 14 operations. Contract generated from the documentation by API Evangelist (2026-09-26);
-
-    not the provider''s own document.'
-  humanURL: https://apidocs.atomtickets.com
-  baseURL: https://api-beta.atomtickets.com
+- aid: atomtickets:atomtickets-partner-api
+  name: Atomtickets Partner API
+  description: The Partner API from Atomtickets — 12 operation(s) for partner.
+  humanURL: https://developers.atomtickets.com/
+  baseURL: https://developers.atomtickets.com/api
+  tags:
+  - Partner
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/atomtickets-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/atomtickets-partner-api-openapi.yml
   - type: JSONSchema
-    url: json-schema/atomtickets-get-partner-v1-venues-byvendorvenueid-byvendorvenueidid-showtimes-b-schema.json
+    url: >-
+      json-schema/atomtickets-get-partner-v1-venues-byvendorvenueid-byvendorvenueidid-showtimes-b-schema.json
   - type: JSONSchema
-    url: json-schema/atomtickets-get-partner-v1-venues-c00682352378-showtimes-byvendorshowtimeid-byv-schema.json
+    url: >-
+      json-schema/atomtickets-get-partner-v1-venues-c00682352378-showtimes-byvendorshowtimeid-byv-schema.json
   - type: JSONSchema
     url: json-schema/atomtickets-post-partner-v1-v1-id-details-byids-response-schema.json
   - type: JSONSchema
     url: json-schema/atomtickets-get-partner-v1-production-search-byname-response-schema.json
   - type: JSONSchema
-    url: json-schema/atomtickets-get-partner-v1-productions-byvendorproductionid-byvendorproductio-schema.json
+    url: >-
+      json-schema/atomtickets-get-partner-v1-productions-byvendorproductionid-byvendorproductio-schema.json
   - type: JSONSchema
     url: json-schema/atomtickets-get-partner-v1-venue-details-detailid-response-schema.json
-
+- aid: atomtickets:atomtickets-ping-api
+  name: Atomtickets Ping API
+  description: The Ping API from Atomtickets — 1 operation(s) for ping.
+  humanURL: https://developers.atomtickets.com/
+  baseURL: https://developers.atomtickets.com/api
+  tags:
+  - Ping
+  properties:
+  - type: OpenAPI
+    url: openapi/atomtickets-ping-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/atomtickets-get-partner-v1-venues-byvendorvenueid-byvendorvenueidid-showtimes-b-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/atomtickets-get-partner-v1-venues-c00682352378-showtimes-byvendorshowtimeid-byv-schema.json
+  - type: JSONSchema
+    url: json-schema/atomtickets-post-partner-v1-v1-id-details-byids-response-schema.json
+  - type: JSONSchema
+    url: json-schema/atomtickets-get-partner-v1-production-search-byname-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/atomtickets-get-partner-v1-productions-byvendorproductionid-byvendorproductio-schema.json
+  - type: JSONSchema
+    url: json-schema/atomtickets-get-partner-v1-venue-details-detailid-response-schema.json
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec

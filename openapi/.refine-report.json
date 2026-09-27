@@ -1,0 +1,19 @@
+{
+  "provider": "atomtickets",
+  "sources": [
+    "_ae-authored/atomtickets-openapi-generated.yml"
+  ],
+  "outputs": [
+    "atomtickets-partner-api-openapi.yml",
+    "atomtickets-ping-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "atomtickets-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+2 apis, 3 total)"
+  ],
+  "skipped": []
+}
