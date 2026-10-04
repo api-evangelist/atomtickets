@@ -28,6 +28,11 @@ modified: '2026-09-26'
 tags:
 - Company
 - Ticketing
+- Event
+- Payments
+tags_raw:
+- Company
+- Ticketing
 - Events
 - API
 - Payments
@@ -92,6 +97,8 @@ apis:
   humanURL: https://developers.atomtickets.com/
   baseURL: https://developers.atomtickets.com/api
   tags:
+  - Partners
+  tags_raw:
   - Partner
   properties:
   - type: OpenAPI
