@@ -435,6 +435,13 @@ paths:
         collapsed_from: 3 example path(s) differing only at v1Id
 components:
   schemas:
+    GetPartnerV1ProductionIdsByvenueC00110921804Response:
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
     GetPartnerV1VenuesByvendorvenueidByvendorvenueididResponse:
       type: object
       properties:
@@ -471,6 +478,177 @@ components:
               type: string
             atomVenueId:
               type: string
+    GetPartnerV1VenuesC00682352378ShowtimesByvendorshowtimeidByv:
+      type: object
+      properties:
+        showtimeDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              showtimeId:
+                type: string
+              productionId:
+                type: string
+              venueId:
+                type: string
+              offerData:
+                type: object
+                properties:
+                  offers:
+                    type: array
+                    items: {}
+              utcShowtimeStart:
+                type: string
+                format: date-time
+              localShowtimeStart:
+                type: string
+                format: date-time
+              attributes:
+                type: array
+                items:
+                  type: string
+              checkoutUrl:
+                type: string
+              availableInventory:
+                type: integer
+        preOrderDetails:
+          type: array
+          items: {}
+        attributeMap:
+          type: object
+          properties:
+            RESERVED:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                iconUrl:
+                  type: string
+                friendlyName:
+                  type: string
+                description:
+                  type: string
+            STANDARD-FORMAT:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                iconUrl:
+                  type: string
+                friendlyName:
+                  type: string
+                description:
+                  type: string
+    PostPartnerV1VenueDetailsDetailidResponse:
+      type: object
+      properties:
+        venueId:
+          type: string
+        name:
+          type: string
+        address:
+          type: string
+        latitude:
+          type: string
+        longitude:
+          type: string
+        isActive:
+          type: string
+        venueUrl:
+          type: string
+    GetPartnerV1ShowtimeDetailsByvenueVenueidResponse:
+      type: object
+      properties:
+        showtimeId:
+          type: string
+          description: unique identifier
+        localShowtime:
+          type: string
+          description: display time in the venue’s timezone
+        productionTitle:
+          type: string
+          description: movie name
+        checkoutUrl:
+          type: string
+          description: the key field for co-branded checkout
+        attributeMap:
+          type: string
+          description: screen format (IMAX, Dolby, etc.), accessibility features
+        preOrderDetails:
+          type: string
+          description: pricing information and ticket availability
+    PostPartnerV1V1IdDetailsByidsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        productionMedia:
+          type: object
+          properties:
+            imageData:
+              type: object
+              properties:
+                coverImageUrl:
+                  type: string
+                promoImageUrls:
+                  type: array
+                  items:
+                    type: string
+            trailerData:
+              type: object
+              properties:
+                trailerUrls:
+                  type: array
+                  items: {}
+        contributors:
+          type: object
+          properties:
+            cast:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  characterName:
+                    type: string
+            crew:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  role:
+                    type: string
+        synopsis:
+          type: string
+        advisoryRating:
+          type: string
+        genres:
+          type: array
+          items:
+            type: string
+        runtimeMinutes:
+          type: integer
+        releaseDate:
+          type: string
+          format: date
+        atomUserScore:
+          type: number
+        productionUrl:
+          type: string
+        imdbId:
+          type: string
+        atomProductionId:
+          type: string
     PostPartnerV1VenueDetailsDetailidRequest:
       type: object
       properties:
@@ -545,6 +723,31 @@ components:
                   type: string
                 description:
                   type: string
+    PostPartnerV1V1IdDetailsByidsRequest:
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+    PostPartnerV1ShowtimeDetailsDetailidRequest:
+      type: object
+      properties:
+        venueIds:
+          type: array
+          items:
+            type: string
+        isoDateBounds:
+          type: object
+          properties:
+            isoStartDate:
+              type: string
+              format: date-time
+            isoEndDate:
+              type: string
+              format: date-time
+        includeProductionDetails:
+          type: boolean
     GetPartnerV1VenueDetailsDetailidResponse:
       type: object
       properties:
@@ -583,25 +786,32 @@ components:
               type: string
         kmDistance:
           type: number
-    PostPartnerV1ShowtimeDetailsDetailidRequest:
+    GetPartnerV1ProductionIdsByvenueVenueidResponse:
       type: object
       properties:
-        venueIds:
+        ids:
+          type: array
+    PostPartnerV1ShowtimeDetailsDetailidResponse:
+      type: object
+      properties:
+        showtimeDetails:
+          type: array
+          items: {}
+        preOrderDetails:
           type: array
           items:
-            type: string
-        isoDateBounds:
-          type: object
-          properties:
-            isoStartDate:
-              type: string
-              format: date-time
-            isoEndDate:
-              type: string
-              format: date-time
-        includeProductionDetails:
-          type: boolean
-    PostPartnerV1V1IdDetailsByidsResponse:
+            type: object
+            properties:
+              productionId:
+                type: string
+              venueId:
+                type: string
+              showtimeDays:
+                type: array
+                items:
+                  type: string
+                  format: date-time
+    GetPartnerV1ProductionsByvendorproductionidByvendorproductio:
       type: object
       properties:
         id:
@@ -618,14 +828,14 @@ components:
                   type: string
                 promoImageUrls:
                   type: array
-                  items:
-                    type: string
+                  items: {}
             trailerData:
               type: object
               properties:
                 trailerUrls:
                   type: array
-                  items: {}
+                  items:
+                    type: string
         contributors:
           type: object
           properties:
@@ -660,30 +870,9 @@ components:
         releaseDate:
           type: string
           format: date
-        atomUserScore:
-          type: number
         productionUrl:
           type: string
         imdbId:
-          type: string
-        atomProductionId:
-          type: string
-    PostPartnerV1VenueDetailsDetailidResponse:
-      type: object
-      properties:
-        venueId:
-          type: string
-        name:
-          type: string
-        address:
-          type: string
-        latitude:
-          type: string
-        longitude:
-          type: string
-        isActive:
-          type: string
-        venueUrl:
           type: string
     GetPartnerV1ProductionSearchBynameResponse:
       type: object
@@ -750,195 +939,6 @@ components:
           type: string
         imdbId:
           type: string
-    GetPartnerV1ProductionsByvendorproductionidByvendorproductio:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        productionMedia:
-          type: object
-          properties:
-            imageData:
-              type: object
-              properties:
-                coverImageUrl:
-                  type: string
-                promoImageUrls:
-                  type: array
-                  items: {}
-            trailerData:
-              type: object
-              properties:
-                trailerUrls:
-                  type: array
-                  items:
-                    type: string
-        contributors:
-          type: object
-          properties:
-            cast:
-              type: array
-              items:
-                type: object
-                properties:
-                  name:
-                    type: string
-                  characterName:
-                    type: string
-            crew:
-              type: array
-              items:
-                type: object
-                properties:
-                  name:
-                    type: string
-                  role:
-                    type: string
-        synopsis:
-          type: string
-        advisoryRating:
-          type: string
-        genres:
-          type: array
-          items:
-            type: string
-        runtimeMinutes:
-          type: integer
-        releaseDate:
-          type: string
-          format: date
-        productionUrl:
-          type: string
-        imdbId:
-          type: string
-    PostPartnerV1V1IdDetailsByidsRequest:
-      type: object
-      properties:
-        ids:
-          type: array
-          items:
-            type: string
-    GetPartnerV1ShowtimeDetailsByvenueVenueidResponse:
-      type: object
-      properties:
-        showtimeId:
-          type: string
-          description: unique identifier
-        localShowtime:
-          type: string
-          description: display time in the venue’s timezone
-        productionTitle:
-          type: string
-          description: movie name
-        checkoutUrl:
-          type: string
-          description: the key field for co-branded checkout
-        attributeMap:
-          type: string
-          description: screen format (IMAX, Dolby, etc.), accessibility features
-        preOrderDetails:
-          type: string
-          description: pricing information and ticket availability
-    PostPartnerV1ShowtimeDetailsDetailidResponse:
-      type: object
-      properties:
-        showtimeDetails:
-          type: array
-          items: {}
-        preOrderDetails:
-          type: array
-          items:
-            type: object
-            properties:
-              productionId:
-                type: string
-              venueId:
-                type: string
-              showtimeDays:
-                type: array
-                items:
-                  type: string
-                  format: date-time
-    GetPartnerV1ProductionIdsByvenueC00110921804Response:
-      type: object
-      properties:
-        ids:
-          type: array
-          items:
-            type: string
-    GetPartnerV1ProductionIdsByvenueVenueidResponse:
-      type: object
-      properties:
-        ids:
-          type: array
-    GetPartnerV1VenuesC00682352378ShowtimesByvendorshowtimeidByv:
-      type: object
-      properties:
-        showtimeDetails:
-          type: array
-          items:
-            type: object
-            properties:
-              showtimeId:
-                type: string
-              productionId:
-                type: string
-              venueId:
-                type: string
-              offerData:
-                type: object
-                properties:
-                  offers:
-                    type: array
-                    items: {}
-              utcShowtimeStart:
-                type: string
-                format: date-time
-              localShowtimeStart:
-                type: string
-                format: date-time
-              attributes:
-                type: array
-                items:
-                  type: string
-              checkoutUrl:
-                type: string
-              availableInventory:
-                type: integer
-        preOrderDetails:
-          type: array
-          items: {}
-        attributeMap:
-          type: object
-          properties:
-            RESERVED:
-              type: object
-              properties:
-                id:
-                  type: string
-                type:
-                  type: string
-                iconUrl:
-                  type: string
-                friendlyName:
-                  type: string
-                description:
-                  type: string
-            STANDARD-FORMAT:
-              type: object
-              properties:
-                id:
-                  type: string
-                type:
-                  type: string
-                iconUrl:
-                  type: string
-                friendlyName:
-                  type: string
-                description:
-                  type: string
   securitySchemes:
     apiKey:
       type: apiKey
